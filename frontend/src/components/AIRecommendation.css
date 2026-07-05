@@ -1,0 +1,110 @@
+.ai-panel {
+  width: 100%;
+}
+
+.ai-header {
+  margin-bottom: 24px;
+}
+
+.ai-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.ai-icon {
+  font-size: 1.4rem;
+}
+
+.ai-title h2 {
+  color: #f0c419;
+  font-size: 1.5rem;
+}
+
+.ai-header p {
+  color: #555;
+  font-size: 0.85rem;
+}
+
+.ai-analyzing {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #888;
+  font-size: 0.9rem;
+  padding: 24px;
+  background-color: #0f0f0f;
+  border: 1px solid #1a1a1a;
+  border-radius: 10px;
+}
+
+.analyzing-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #f0c419;
+  border-radius: 50%;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+
+.ai-recommendations {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.no-data {
+  color: #444;
+  font-size: 0.9rem;
+  padding: 20px;
+  text-align: center;
+}
+
+.recommendation-card {
+  background-color: #0f0f0f;
+  border: 1px solid #1a1a1a;
+  border-left: 3px solid;
+  border-radius: 10px;
+  padding: 16px;
+  animation: fadeIn 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.rec-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.rec-icon {
+  font-size: 0.9rem;
+}
+
+.rec-severity {
+  font-size: 0.7rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.rec-title {
+  color: #f5f5f5;
+  font-size: 0.95rem;
+  font-weight: bold;
+}
+
+.rec-message {
+  color: #888;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}

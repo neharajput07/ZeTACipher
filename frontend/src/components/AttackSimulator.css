@@ -1,0 +1,224 @@
+.attack-simulator {
+  width: 100%;
+}
+
+.simulator-header {
+  margin-bottom: 24px;
+}
+
+.simulator-header h2 {
+  color: #f0c419;
+  font-size: 1.5rem;
+  margin-bottom: 6px;
+}
+
+.simulator-header p {
+  color: #555;
+  font-size: 0.85rem;
+}
+
+.simulator-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 24px;
+  align-items: center;
+}
+
+.control-group label {
+  display: block;
+  color: #888;
+  font-size: 0.75rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.attack-types {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.attack-card {
+  background-color: #111;
+  border: 1px solid #222;
+  border-radius: 10px;
+  padding: 14px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.attack-card:hover {
+  border-color: #333;
+}
+
+.attack-card.selected {
+  border-color: #f0c419;
+  background-color: #141400;
+}
+
+.attack-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.attack-label {
+  color: #f5f5f5;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.severity-badge {
+  font-size: 0.65rem;
+  font-weight: bold;
+  border: 1px solid;
+  padding: 2px 8px;
+  border-radius: 10px;
+  letter-spacing: 1px;
+}
+
+.attack-desc {
+  color: #555;
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.node-selector {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  width: 100%;
+}
+
+.node-btn {
+  background-color: #111;
+  border: 1px solid #222;
+  color: #888;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s;
+}
+
+.node-btn span {
+  font-size: 0.65rem;
+  font-weight: normal;
+  color: #444;
+}
+
+.node-btn.selected {
+  border-color: #f0c419;
+  color: #f0c419;
+}
+
+.node-btn.selected span {
+  color: #888;
+}
+
+.launch-btn {
+  background-color: #d9534f;
+  color: #fff;
+  border: none;
+  padding: 14px 32px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: opacity 0.2s;
+  align-self: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+.launch-btn:hover {
+  opacity: 0.85;
+}
+
+.launch-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.incident-timeline {
+  background-color: #080808;
+  border: 1px solid #1a1a1a;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.incident-timeline h3 {
+  color: #f0c419;
+  font-size: 1rem;
+  margin-bottom: 16px;
+  letter-spacing: 1px;
+}
+
+.timeline-events {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.timeline-event {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border-left: 3px solid transparent;
+  font-size: 0.85rem;
+  animation: slideIn 0.3s ease forwards;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.timeline-event.info {
+  background-color: #0f0f0f;
+  border-left-color: #333;
+}
+
+.timeline-event.warning {
+  background-color: #111008;
+  border-left-color: #f0c419;
+}
+
+.timeline-event.threat {
+  background-color: #110808;
+  border-left-color: #d9534f;
+}
+
+.timeline-event.critical {
+  background-color: #150505;
+  border-left-color: #ff0000;
+}
+
+.timeline-event.success {
+  background-color: #081108;
+  border-left-color: #28a745;
+}
+
+.event-time {
+  color: #444;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  padding-top: 1px;
+}
+
+.event-message {
+  color: #ccc;
+  line-height: 1.5;
+}

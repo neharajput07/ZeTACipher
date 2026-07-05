@@ -1,0 +1,66 @@
+.health-score {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  background-color: #111;
+  border: 1px solid #2a2a2a;
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.score-left {
+  flex: 1;
+}
+
+.score-label {
+  color: #f5f5f5;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.score-sublabel {
+  color: #aaa;
+  font-size: 0.85rem;
+}
+
+.score-right {
+  display: flex;
+  align-items: center;
+}
+
+.score-circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 3px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1a1a1a;
+}
+
+.score-number {
+  font-size: 1.1rem;
+  font-weight: 900;
+}
+
+.score-bar-container {
+  width: 100%;
+  height: 4px;
+  background-color: #2a2a2a;
+  border-radius: 2px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.score-bar {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.5s ease, background-color 0.3s ease;
+}
