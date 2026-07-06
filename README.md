@@ -48,13 +48,15 @@ Each node verifies only its direct neighbor — enforcing Zero Trust principles 
 ---
 
 ## 🔐 How HMAC Handshake Works
-Node A generates a random nonce
-Node A sends nonce to Node B
-Node B computes HMAC-SHA256(nonce + secretKey) → sends result back
-Node A independently computes HMAC-SHA256(nonce + secretKey)
-Match → Node B is TRUSTED ✅
-No match → Node B is QUARANTINED 🚫
----
+
+```
+1. Node A generates a random nonce
+2. Node A sends nonce to Node B
+3. Node B computes HMAC-SHA256(nonce + secretKey) → sends result back
+4. Node A independently computes HMAC-SHA256(nonce + secretKey)
+5. Match   → Node B is TRUSTED ✅
+6. No match → Node B is QUARANTINED 🚫
+```
 
 ## 📁 Project Structure
 
@@ -121,7 +123,6 @@ npm run dev
 
 ### Authentication
 ZeTACipher uses a real database-backed authentication system. Create your own account through the Sign Up page to access the dashboard.
----
 
 ---
 
