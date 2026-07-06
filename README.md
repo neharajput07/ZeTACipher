@@ -57,23 +57,51 @@ No match → Node B is QUARANTINED 🚫
 ---
 
 ## 📁 Project Structure
+
+```
 ZeTACipher/
 ├── backend/
 │   └── src/main/java/com/zetacipher/backend/
-│       ├── crypto/          → HMACUtil.java
-│       ├── node/            → Node, NodeServer, NodeClient
-│       ├── network/         → MeshNetwork.java
-│       ├── model/           → HandshakeLog, NodeStatusDTO, User
-│       ├── repository/      → JPA Repositories
-│       ├── service/         → NetworkService.java
-│       └── controller/      → StatusController, AuthController
+│       ├── crypto/
+│       │   └── HMACUtil.java
+│       ├── node/
+│       │   ├── Node.java
+│       │   ├── NodeServer.java
+│       │   └── NodeClient.java
+│       ├── network/
+│       │   └── MeshNetwork.java
+│       ├── model/
+│       │   ├── HandshakeLog.java
+│       │   ├── NodeStatusDTO.java
+│       │   └── User.java
+│       ├── repository/
+│       │   ├── HandshakeLogRepository.java
+│       │   └── UserRepository.java
+│       ├── service/
+│       │   └── NetworkService.java
+│       └── controller/
+│           ├── StatusController.java
+│           └── AuthController.java
 └── frontend/
-└── src/
-├── components/      → Dashboard components
-├── pages/           → Landing, Login, Dashboard
-├── services/        → API calls
-└── utils/           → Device names, Threat analyzer
----
+    └── src/
+        ├── components/
+        │   ├── TopologyMap.jsx
+        │   ├── NodeDashboard.jsx
+        │   ├── HandshakeLogs.jsx
+        │   ├── AttackSimulator.jsx
+        │   ├── AIRecommendation.jsx
+        │   ├── HealthScore.jsx
+        │   └── ThreatBanner.jsx
+        ├── pages/
+        │   ├── LandingPage.jsx
+        │   ├── LoginPage.jsx
+        │   └── DashboardPage.jsx
+        ├── services/
+        │   └── api.js
+        └── utils/
+            ├── deviceNames.js
+            └── threatAnalyzer.js
+```
 
 ## ⚙️ Setup & Running Locally
 
@@ -94,14 +122,6 @@ npm run dev
 ### Authentication
 ZeTACipher uses a real database-backed authentication system. Create your own account through the Sign Up page to access the dashboard.
 ---
-
-## 🎯 Key Interview Concepts
-
-- **DTO Pattern** — NodeStatusDTO prevents secretKey exposure in API responses
-- **@PostConstruct** — NetworkService initializes mesh on Spring Boot startup
-- **Daemon Threads** — Each node runs as a non-blocking background thread
-- **Zero Trust** — No node trusts any other by default, trust earned every handshake
-- **Ring Topology** — Chosen to enforce neighbor-only verification, aligning with Zero Trust
 
 ---
 
