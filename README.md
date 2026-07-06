@@ -42,9 +42,13 @@ ZeTACipher simulates a 5-node IoT mesh network where every device must cryptogra
 ## 🏗️ Architecture
 
 **Flow:**
-IoT Device → Authentication → Trust Engine → Threat Detection → Auto Isolation
+
+`IoT Device → Authentication → Trust Engine → Threat Detection → Auto Isolation`
+
 **Ring Topology:**
-N1 (Smart Camera) → N2 (Door Lock) → N3 (Temp Sensor) → N4 (Network Router) → N5 (Security Alarm) → N1
+
+`N1 (Smart Camera) → N2 (Door Lock) → N3 (Temp Sensor) → N4 (Network Router) → N5 (Security Alarm) → N1`
+
 Each node verifies only its direct neighbor — enforcing Zero Trust principles by limiting verification scope.
 
 ---
