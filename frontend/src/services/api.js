@@ -1,6 +1,8 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:8080/api/network';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL 
+  ? `${import.meta.env.VITE_API_BASE_URL}/api/network`
+  : 'http://localhost:8080/api/network';
 
 export const getNodeStatus = async () => {
   const response = await axios.get(`${API_BASE_URL}/status`);
@@ -27,7 +29,7 @@ export const restoreNode = async (nodeId) => {
   return response.data;
 };
 export const loginUser = async (username, password) => {
-  const response = await axios.post('http://localhost:8080/api/auth/login', {
+  const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080'}/api/auth/login`, {
     username,
     password,
   });
@@ -35,7 +37,7 @@ export const loginUser = async (username, password) => {
 };
 
 export const registerUser = async (username, password) => {
-  const response = await axios.post('http://localhost:8080/api/auth/register', {
+  const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080'}/api/auth/register`, {
     username,
     password,
   });
