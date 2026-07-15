@@ -21,21 +21,21 @@ ZeTACipher simulates a 5-node IoT mesh network where every device must cryptogra
 - 🧠 **AI Security Advisor** — Rule-based threat pattern detection with actionable recommendations
 - 📊 **Network Health Score** — Live percentage based on trusted vs quarantined nodes
 - 🚨 **Threat Alert Banner** — Auto-appears when any node is quarantined
-- 👤 **Real Authentication** — MySQL-backed user registration and login
+- 👤 **Real Authentication** — Spring Boot & Supabase PostgreSQL backed user registration and login
 
 ---
 
 ## 🛠️ Tech Stack
 
 | Layer | Technology |
-|-------|-----------|
+|--------|------------|
 | Backend | Java 21, Spring Boot 3.5 |
 | Cryptography | HMAC-SHA256 (javax.crypto) |
 | Network Simulation | Java Sockets, Daemon Threads |
-| Database | MySQL (JPA/Hibernate) |
+| Database | Supabase PostgreSQL (Spring Data JPA/Hibernate) |
 | Frontend | React 18, Vite |
-| Styling | CSS3 (custom, no UI library) |
-| Deployment | Railway (backend), Vercel (frontend) |
+| Styling | CSS3 (Custom CSS) |
+| Deployment | Render (Backend), Vercel (Frontend) |
 
 ---
 
@@ -110,13 +110,28 @@ ZeTACipher/
             ├── deviceNames.js
             └── threatAnalyzer.js
 ```
+---
+
+## ☁️ Deployment
+
+| Service | Platform |
+|----------|----------|
+| Frontend | Vercel |
+| Backend | Render |
+| Database | Supabase PostgreSQL |
+
+The React frontend communicates with a Spring Boot REST API hosted on Render. The backend securely interacts with a Supabase PostgreSQL database using Spring Data JPA/Hibernate.
+
 
 ## ⚙️ Setup & Running Locally
 
 ### Backend
 ```bash
 cd backend
-# Configure MySQL in application.properties
+
+# Configure Supabase PostgreSQL credentials
+# in application.properties
+
 ./mvnw spring-boot:run
 ```
 
@@ -126,16 +141,33 @@ cd frontend
 npm install
 npm run dev
 ```
+## 🔐 Authentication
 
-### Authentication
-ZeTACipher uses a real database-backed authentication system. Create your own account through the Sign Up page to access the dashboard.
+ZeTACipher implements a custom authentication system using Spring Boot, Spring Data JPA, and Supabase PostgreSQL.
+
+Users can register and log in to securely access the dashboard and interact with the simulated Zero-Trust IoT mesh network.
 
 ---
+---
 
-## 👤 Author
+## 🚀 Future Enhancements
 
-**Neha Rajput** — Final Year B.Tech Student  
-[LinkedIn](https://www.linkedin.com/in/neha-rajput-9615b5295)
+- Password hashing using BCrypt
+- JWT-based authentication
+- Row-Level Security (RLS)
+- Docker Compose support
+- Kubernetes deployment
+- Prometheus & Grafana monitoring
+- Real MQTT-based IoT communication
+- Multi-user mesh simulation
+
+## 👨‍💻 Author
+
+**Neha Rajput**
+
+B.Tech (Computer Science Engineering - IoT, Cybersecurity & Blockchain)
+
+LinkedIn: https://www.linkedin.com/in/neha-rajput-9615b5295
 
 ---
 
